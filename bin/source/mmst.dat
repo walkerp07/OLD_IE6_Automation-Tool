@@ -1,0 +1,263 @@
+|
+4 page, 1:Empty, 2:MID, 3:AMR, 4:AMR|
+4 page, 1:MID, 2:Empty, 3:AMR, 4:WAV|
+2 page, 1:{AMR / BMP}, 2:Empty|
+2 page, 1:{AMR / MP4}, 2:JPEG|
+4 page, 1:MID, 2:AMR, 3:Empty, 4:MID|
+4 page, 1:MID, 2:WAV, 3:AMR, 4:Empty|
+2 page, 1:{AMR / BMP}, 2:Empty|
+2 page, 1:{AMR / MP4}, 2:JPEG|
+4 page, 1:Empty, 2:MP4, 3:WAV, 4:WAV|
+4 page, 1:MID, 2:Empty, 3:WAV, 4:MID|
+4 page, 1:MID, 2:MID, 3:Empty, 4:AMR|
+2 page, 1:{AMR / BMP}, 2:Empty|
+2 page, 1:{AMR / MP4}, 2:JPEG|
+4 page, 1:Empty, 2:MID, 3:MID, 4:WAV|
+4 page, 1:MID, 2:Empty, 3:MID, 4:MID|
+2 page, 1:{AMR / BMP}, 2:Empty|
+2 page, 1:{AMR / MP4}, 2:JPEG|
+1 page, 1:AMR|
+1 page, 1:WAV|
+1 page, 1:AMR|
+1 page, 1:WAV|
+1 page, 1:MID|
+1 page, 1:BMP|
+1 page, 1:JPEG|
+1 page, 1:MP4|
+1 page, 1:GIF|
+1 page, 1:AGIF|
+1 page, 1:PNG|
+1 page, 1:GIF|
+4 page, 1:Empty, 2:MID, 3:AMR, 4:AMR|
+4 page, 1:MID, 2:Empty, 3:AMR, 4:WAV|
+4 page, 1:MID, 2:AMR, 3:Empty, 4:MID|
+4 page, 1:MID, 2:WAV, 3:AMR, 4:Empty|
+4 page, 1:Empty, 2:MP4, 3:WAV, 4:WAV|
+4 page, 1:MID, 2:Empty, 3:WAV, 4:MID|
+4 page, 1:MID, 2:MID, 3:Empty, 4:AMR|
+4 page, 1:Empty, 2:MID, 3:MID, 4:WAV|
+4 page, 1:MID, 2:Empty, 3:MID, 4:MID|
+2 page, 1:{AMR / BMP}, 2:Empty|
+2 page, 1:{AMR / MP4}, 2:JPEG|
+2 page, 1:{AMR / GIF}, 2:GIF|
+2 page, 1:Empty, 2:AGIF|
+2 page, 1:{AMR / PNG}, 2:MP4|
+2 page, 1:{AMR / GIF}, 2:GIF|
+2 page, 1:{WAV / BMP}, 2:Empty|
+2 page, 1:{WAV / JPEG}, 2:MP4|
+2 page, 1:{WAV / GIF}, 2:GIF|
+2 page, 1:{WAV / PNG}, 2:PNG|
+2 page, 1:{WAV / GIF}, 2:GIF|
+2 page, 1:{MID / BMP}, 2:BMP|
+2 page, 1:{MID / JPEG}, 2:JPEG|
+2 page, 1:{MID / GIF}, 2:GIF|
+2 page, 1:{MID / PNG}, 2:MP4|
+2 page, 1:{MID / GIF}, 2:GIF|
+3 page, 1:{AMR / BMP}, 2:{BMP / AMR}, 3:AMR|
+3 page, 1:{AMR / BMP}, 2:{BMP / WAV}, 3:WAV|
+3 page, 1:{AMR / BMP}, 2:{BMP / MID}, 3:MID|
+3 page, 1:{AMR / JPEG}, 2:{MP4 / AMR}, 3:AMR|
+3 page, 1:{AMR / JPEG}, 2:{JPEG / WAV}, 3:WAV|
+3 page, 1:{AMR / JPEG}, 2:{MP4 / MID}, 3:MID|
+3 page, 1:{AMR / GIF}, 2:{GIF / AMR}, 3:AMR|
+3 page, 1:{AMR / GIF}, 2:{GIF / WAV}, 3:WAV|
+3 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:MID|
+3 page, 1:{AMR / AGIF}, 2:{AGIF / :AMR}, 3:AMR|
+3 page, 1:{AMR / AGIF}, 2:{AGIF / :WAV}, 3:WAV|
+3 page, 1:{AMR / AGIF}, 2:{AGIF / :MID}, 3:MID|
+3 page, 1:{AMR / PNG}, 2:{PNG / AMR}, 3:AMR|
+3 page, 1:{AMR / PNG}, 2:{PNG / WAV}, 3:WAV|
+3 page, 1:{AMR / PNG}, 2:{PNG / MID}, 3:MID|
+3 page, 1:{AMR / GIF}, 2:{GIF / AMR}, 3:AMR|
+3 page, 1:{AMR / GIF}, 2:{GIF / WAV}, 3:WAV|
+3 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:MID|
+3 page, 1:{WAV / BMP}, 2:{BMP / AMR}, 3:AMR|
+3 page, 1:{WAV / BMP}, 2:{BMP / WAV}, 3:WAV|
+3 page, 1:{WAV / BMP}, 2:{BMP / MID}, 3:MID|
+3 page, 1:{WAV / JPEG}, 2:{JPEG / AMR}, 3:AMR|
+3 page, 1:{WAV / JPEG}, 2:{MP4 / WAV}, 3:WAV|
+3 page, 1:{WAV / JPEG}, 2:{JPEG / MID}, 3:MID|
+3 page, 1:{WAV / GIF}, 2:{GIF / AMR}, 3:AMR|
+3 page, 1:{WAV / GIF}, 2:{GIF / WAV}, 3:WAV|
+3 page, 1:{WAV / GIF}, 2:{GIF / MID}, 3:MID|
+3 page, 1:WAV, 2:AMR, 3:Empty|
+3 page, 1:WAV, 2:Empty, 3:WAV|
+3 page, 1:Empty, 2:WAV, 3:MID|
+3 page, 1:{WAV / PNG}, 2:{PNG / AMR}, 3:AMR|
+3 page, 1:{WAV / PNG}, 2:{PNG / WAV}, 3:WAV|
+3 page, 1:{WAV / PNG}, 2:{PNG / MID}, 3:MID|
+3 page, 1:{WAV / GIF}, 2:{GIF / AMR}, 3:AMR|
+3 page, 1:{WAV / GIF}, 2:{GIF / WAV}, 3:WAV|
+3 page, 1:{WAV / GIF}, 2:{GIF / MID}, 3:MID|
+3 page, 1:{MID / BMP}, 2:{BMP / AMR}, 3:AMR|
+3 page, 1:{MID / BMP}, 2:{BMP / WAV}, 3:WAV|
+3 page, 1:{MID / BMP}, 2:{BMP / MID}, 3:MID|
+3 page, 1:{MID / JPEG}, 2:{MP4 / AMR}, 3:AMR|
+3 page, 1:{MID / JPEG}, 2:{JPEG / WAV}, 3:WAV|
+3 page, 1:{MID / JPEG}, 2:{MP4 / MID}, 3:MID|
+3 page, 1:{MID / GIF}, 2:{GIF / AMR}, 3:AMR|
+3 page, 1:{MID / GIF}, 2:{GIF / WAV}, 3:WAV|
+3 page, 1:{MID / GIF}, 2:{GIF / MID}, 3:MID|
+3 page, 1:Empty, 2:MID, 3:AMR|
+3 page, 1:MID, 2:WAV, 3:Empty|
+3 page, 1:MID, 2:Empty, 3:MID|
+3 page, 1:{MP4 / JPEG}, 2:{AMR / MP4}, 3:{WAV / JPEG}|
+3 page, 1:{MID / PNG}, 2:{PNG / AMR}, 3:AMR|
+3 page, 1:{MID / PNG}, 2:{PNG / WAV}, 3:WAV|
+3 page, 1:{MID / PNG}, 2:{PNG / MID}, 3:MID|
+3 page, 1:{MID / GIF}, 2:{GIF / AMR}, 3:AMR|
+3 page, 1:{MID / GIF}, 2:{GIF / MP4}, 3:WAV|
+3 page, 1:{MID / GIF}, 2:{GIF / MID}, 3:MID|
+4 page, 1:{AMR / MP4}, 2:{BMP / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{AMR / BMP}, 2:{BMP / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{AMR / BMP}, 2:{MP4 / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{AMR / BMP}, 2:{BMP / MP4}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{AMR / BMP}, 2:{BMP / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{AMR / BMP}, 2:{BMP / MP4}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{AMR / MP4}, 2:{BMP / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{AMR / BMP}, 2:{BMP / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{AMR / BMP}, 2:{MP4 / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{AMR / JPEG}, 2:{MP4 / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{AMR / JPEG}, 2:{JPEG / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{AMR / JPEG}, 2:{MP4 / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{AMR / JPEG}, 2:{JPEG / MP4}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{AMR / JPEG}, 2:{MP4 / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{AMR / JPEG}, 2:{JPEG / MP4}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{AMR / JPEG}, 2:{MP4 / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{AMR / JPEG}, 2:{JPEG / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{AMR / JPEG}, 2:{MP4 / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{AMR / GIF}, 2:{GIF / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{AMR / GIF}, 2:{GIF / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{AMR / GIF}, 2:{GIF / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{AMR / GIF}, 2:{GIF / MP4}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{AMR / GIF}, 2:{GIF / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{AMR / GIF}, 2:{GIF / WAV}, 3:{MP4 / MID}, 4:MID|
+4 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:Empty, 2:AMR, 3:AMR, 4:AMR|
+4 page, 1:AMR, 2:Empty, 3:AMR, 4:WAV|
+4 page, 1:AMR, 2:AMR, 3:Empty, 4:MID|
+4 page, 1:AMR, 2:MP4, 3:AMR, 4:Empty|
+4 page, 1:Empty, 2:MP4, 3:WAV, 4:WAV|
+4 page, 1:AMR, 2:Empty, 3:WAV, 4:MID|
+4 page, 1:AMR, 2:MID, 3:Empty, 4:AMR|
+4 page, 1:AMR, 2:MID, 3:MP4, 4:Empty|
+4 page, 1:Empty 1:MP4 3:MID 4:MID|
+4 page, 1:{AMR / PNG}, 2:{PNG / AMR}, 3:{AMR / AMR}, 4:MP4|
+4 page, 1:{AMR / PNG}, 2:{PNG / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{MP4 / PNG}, 2:{PNG / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{AMR / PNG}, 2:{PNG / WAV}, 3:{WAV / AMR}, 4:MP4|
+4 page, 1:{AMR / PNG}, 2:{PNG / MP4}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{AMR / PNG}, 2:{PNG / WAV}, 3:{MP4 / MID}, 4:MID|
+4 page, 1:{AMR / PNG}, 2:{PNG / MID}, 3:{MID / AMR}, 4:MP4|
+4 page, 1:{AMR / PNG}, 2:{PNG / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{AMR / PNG}, 2:{PNG / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{AMR / MP4}, 2:{GIF / MP4}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{AMR / MP4}, 2:{GIF / AMR}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{AMR / MP4}, 2:{GIF / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{AMR / MP4}, 2:{GIF / MP4}, 3:{WAV / MP4}, 4:AMR|
+4 page, 1:{AMR / MP4}, 2:{GIF / WAV}, 3:{WAV / WAV}, 4:MP4|
+4 page, 1:{AMR / GIF}, 2:{MP4 / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:{MID / MP4}, 4:AMR|
+4 page, 1:{AMR / GIF}, 2:{GIF / MID}, 3:{MID / WAV}, 4:MP4|
+4 page, 1:{AMR / GIF}, 2:{MP4 / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{WAV / BMP}, 2:{BMP / MP4}, 3:{AMR / BMP}, 4:AMR|
+4 page, 1:{WAV / BMP}, 2:{MP4 / AMR}, 3:{AMR / WAV}, 4:MP4|
+4 page, 1:{WAV / BMP}, 2:{MP4 / MP4}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{WAV / BMP}, 2:{BMP / WAV}, 3:{MP4 / AMR}, 4:AMR|
+4 page, 1:{WAV / BMP}, 2:{BMP / WAV}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{WAV / BMP}, 2:{BMP / MP4}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{MP4 / MP4}, 2:{BMP / MID}, 3:{MID / MP4}, 4:AMR|
+4 page, 1:{WAV / BMP}, 2:{BMP / MID}, 3:{MID / MP4}, 4:WAV|
+4 page, 1:{WAV / MP4}, 2:{BMP / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / AMR}, 3:{AMR / MP4}, 4:AMR|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{WAV / JPEG}, 2:{JPEG / MP4}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{WAV / JPEG}, 2:{JPEG / WAV}, 3:{WAV / WAV}, 4:MP4|
+4 page, 1:{WAV / JPEG}, 2:{JPEG / MP4}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{WAV / JPEG}, 2:{JPEG / MID}, 3:{MID / MP4}, 4:AMR|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{WAV / GIF}, 2:{GIF / AMR}, 3:{AMR / MP4}, 4:AMR|
+4 page, 1:{WAV / GIF}, 2:{MP4 / AMR}, 3:{AMR / WAV}, 4:MP4|
+4 page, 1:{WAV / GIF}, 2:{GIF / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{WAV / GIF}, 2:{MP4 / WAV}, 3:{MP4 / AMR}, 4:AMR|
+4 page, 1:{WAV / GIF}, 2:{GIF / WAV}, 3:{WAV / MP4}, 4:WAV|
+4 page, 1:{WAV / GIF}, 2:{MP4 / MP4}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{WAV / GIF}, 2:{GIF / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{MP4 / GIF}, 2:{MP4 / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{WAV / GIF}, 2:{GIF / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:Empty, 2:MP4, 3:AMR, 4:AMR|
+4 page, 1:WAV, 2:Empty, 3:AMR, 4:MP4|
+4 page, 1:WAV, 2:AMR, 3:Empty, 4:MID|
+4 page, 1:MP4, 2:AMR, 3:WAV, 4:Empty|
+4 page, 1:Empty, 2:WAV, 3:MP4, 4:WAV|
+4 page, 1:WAV, 2:Empty, 3:WAV, 4:MID|
+4 page, 1:MP4, 2:MID, 3:Empty, 4:AMR|
+4 page, 1:WAV, 2:MID, 3:Empty, 4:WAV|
+4 page, 1:WAV, 2:MID, 3:MID, 4:Empty|
+4 page, 1:{WAV / MP4}, 2:{PNG / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{WAV / PNG}, 2:{PNG / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{WAV / MP4}, 2:{PNG / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{WAV / PNG}, 2:{PNG / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{WAV / PNG}, 2:{MP4 / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{WAV / PNG}, 2:{PNG / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{WAV / PNG}, 2:{MP4 / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{WAV / PNG}, 2:{PNG / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{WAV / PNG}, 2:{MP4 / MP4}, 3:{MID / MID}, 4:MID|
+4 page, 1:{WAV / GIF}, 2:{MP4 / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{WAV / GIF}, 2:{GIF / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{WAV / MP4}, 2:{GIF / AMR}, 3:{AMR / MP4}, 4:MID|
+4 page, 1:{WAV / GIF}, 2:{GIF / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{WAV / GIF}, 2:{MP4 / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{WAV / GIF}, 2:{GIF / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{WAV / GIF}, 2:{MP4 / MP4}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{WAV / GIF}, 2:{GIF / MID}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{WAV / GIF}, 2:{MP4 / MID}, 3:{MID / MID}, 4:MP4|
+4 page, 1:{MID / BMP}, 2:{BMP / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{MID / BMP}, 2:{MP4 / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{MID / BMP}, 2:{BMP / AMR}, 3:{AMR / MID}, 4:MP4|
+4 page, 1:{MID / BMP}, 2:{BMP / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{MID / BMP}, 2:{MP4 / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{MP4 / BMP}, 2:{BMP / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{MP4 / BMP}, 2:{MP4 / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{MID / BMP}, 2:{BMP / MID}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{MID / BMP}, 2:{BMP / MID}, 3:{MID / MP4}, 4:MID|
+4 page, 1:{MID / JPEG}, 2:{JPEG / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{MID / JPEG}, 2:{JPEG / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{MID / JPEG}, 2:{JPEG / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{MID / JPEG}, 2:{JPEG / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{MP4 / JPEG}, 2:{JPEG / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{MID / JPEG}, 2:{JPEG / MID}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{MID / JPEG}, 2:{JPEG / MID}, 3:{MID / MID}, 4:MP4|
+4 page, 1:{MID / GIF}, 2:{GIF / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{MID / GIF}, 2:{MP4 / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{MP4 / GIF}, 2:{GIF / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{MID / GIF}, 2:{GIF / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{MP4 / MP4}, 2:{GIF / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{MID / GIF}, 2:{GIF / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{MID / MP4}, 2:{GIF / MP4}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{MID / GIF}, 2:{GIF / MID}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{MID / MP4}, 2:{GIF / MID}, 3:{MID / MID}, 4:MID|
+4 page, 1:{MID / PNG}, 2:{PNG / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{MP4 / PNG}, 2:{MP4 / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{MID / PNG}, 2:{PNG / AMR}, 3:{AMR / MID}, 4:MID|
+4 page, 1:{MID / PNG}, 2:{MP4 / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{MP4 / PNG}, 2:{PNG / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{MID / PNG}, 2:{MP4 / WAV}, 3:{WAV / MID}, 4:MID|
+4 page, 1:{MID / PNG}, 2:{PNG / MP4}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{MID / PNG}, 2:{MP4 / MID}, 3:{MP4 / WAV}, 4:WAV|
+4 page, 1:{MID / PNG}, 2:{PNG / MID}, 3:{MP4 / MID}, 4:MID|
+4 page, 1:{MP4 / GIF}, 2:{MP4 / AMR}, 3:{AMR / AMR}, 4:AMR|
+4 page, 1:{MID / GIF}, 2:{GIF / AMR}, 3:{AMR / WAV}, 4:WAV|
+4 page, 1:{MID / GIF}, 2:{GIF / AMR}, 3:{AMR / MID}, 4:MP4|
+4 page, 1:{MID / GIF}, 2:{GIF / WAV}, 3:{WAV / AMR}, 4:AMR|
+4 page, 1:{MP4 / GIF}, 2:{GIF / WAV}, 3:{WAV / WAV}, 4:WAV|
+4 page, 1:{MID / GIF}, 2:{GIF / WAV}, 3:{WAV / MID}, 4:MP4|
+4 page, 1:{MID / GIF}, 2:{GIF / MID}, 3:{MID / AMR}, 4:AMR|
+4 page, 1:{MID / GIF}, 2:{GIF / MID}, 3:{MID / WAV}, 4:WAV|
+4 page, 1:{MID / GIF}, 2:{GIF / MID}, 3:{MID / MID}, 4:MID|

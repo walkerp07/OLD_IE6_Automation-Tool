@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<!-------------------------------------------------------------------------------------------
+            //                                                                                                    //
+            //                              COPYRIGHT NOTICE                                         //
+            //                                                                                                    //
+            //       Copyright 2004 Sky MobileMedia. All rights reserved.                 //
+            //                                                                                                    //
+            //   This software is confidential and proprietary information of             //
+           //   Sky MobileMedia. The receipt of or possession of this software does //
+         //   not convey any rights to reproduce or disclose its contents or to        //
+       //   manufacture, use, or sell anything it may describe, in whole, or in       //
+     //   part, without the specific written consent of Sky MobileMedia.                //
+   //                                                                                                            //
+//  |------------------------------------------------------------------------------------------|
+//  |                          #['IDispatch'] - Middle Man# V1.0.1                  [File: 2 of 3]|
+//  |                            Copyright © 2004. - SKY MobileMedia.                              |
+//  |                                Author: Phillip Walker [11/25/05]                                 |
+//   ************************************************************* 
+//------------------------------------------------------------------------------------------->
+<package>
+<component id='core'>
+<registration
+     description="JI"
+     progid="JI.CORE"
+     version="1.00"
+     classid="{79AAEC7D-3236-49e7-8FA0-AAA3F1D646F1}"
+>
+</registration>
+<implements id="JI" type="Event">
+    <event name="_event" />
+</implements>
+<implements type="Automation">
+    <property name="state" get />
+    <property name="host" put />
+    <property name="shell" put />
+    <property name="displayNode" put />
+    <property name="IE" put/>
+    <property name="tableParent" put />
+    <property name="stdRefObj" put />
+    <property name="height" put />
+    <property name="sleepInterval" put />
+    <property name="width" put />
+    <property name="srcPath" put />
+    <property name="srcArguments" put />
+    <property name="contextManager" put />
+    <property name="contextResource" put />
+    <property name="srcId" put />
+    <property name="EvntHndlr" />
+    <method name="show">
+    </method>
+    <method name="hide">
+    </method>
+    <method name="pathObj">
+    </method>
+    <method name="quit">
+        <parameter name="_win" />
+    </method>
+    <method name="clear" >
+    </method>
+     <method name="getSource" >
+        <parameter name="_prm" />
+    </method>
+    <method name="startApp">
+        <parameter name="win" />
+        <parameter name="args" />
+    </method>
+    <method name="resize">
+        <parameter name="_w" />
+        <parameter name="_h" />
+    </method>
+    <method name="write">
+        <parameter name="sText" />
+    </method>
+    <method name="cfgout">
+        <parameter name="opt" />
+        <parameter name="prm" />
+    </method>
+</implements>
+<object id ="f_obj" progid="Scripting.FileSystemObject" reference="yes" />
+<script language="JScript">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//== Global Variables ===
+  var oWindow=oDocument=oMsg=sTitle=e=hFlg=oBody=Copy=Cut=Delete=Indent=sState=initLock=shell=bwidth=xsource=sleep=
+        MultipleSelection=OverWrite=Paste=Print=Refresh=SaveAs=SelectAll=Unselect=maxrow=bheight=xargs=_objLck=
+        listar=cnt=newText=rows=prnt=_pMgr=_res=f_hndl=WSHost=xie=dnode=tblPrnt=resrc=xid=_mArgs=_mw=WaitForObject=false;
+//==
+  var SCROLL_THRESHOLD=30, FACTOR=1, ROW_CHAR_LIMIT=160, ZERO=0;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//== Methods ===
+  var lstr=new Function("t","c","var s=new String(),i;for(i=ZERO;i<t;i++)s=s.concat(c);return s;");
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//== COM Properties ===
+  var get_title=new Function("get_title = sTitle;");
+  var put_sleepInterval=new Function("st","sleep=st");
+  var get_state=new Function("shell.PopUp(sState);get_state=sState;");
+  var put_host=new Function("Host","WSHost=Host;");
+  var put_shell=new Function("_s","shell=_s;");
+  var put_displayNode=new Function("anode","dnode=anode;");
+  var put_tableParent=new Function("Prnt","tblPrnt=Prnt;");
+  var put_stdRefObj=new Function("item","resrc=item;");
+  var put_height=new Function("xheight","bheight=xheight;");
+  var put_contextManager=new Function("_p","_pMgr=_p;");
+  var put_contextResource=new Function("_r","_res=_r;");
+  var put_width=new Function("xwidth","bwidth=xwidth;");
+  var put_IE=new Function("ie","xie=ie;");
+  var put_srcPath=new Function("apath","xsource=apath;");
+  var put_srcArguments=new Function("args","xargs=args;");
+  var put_srcId=new Function("id","xid=id;");
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//== COM Functions ===
+  var quit=new Function("_win","JI.fireEvent('_event');");
+  var show=new Function("try{xie.visible = 1;}catch(e){try{xie.visibility='visible';}catch(e){}}");
+  var hide=new Function("try{xie.visible=ZERO;}catch(e){try{xie.visibility=ZERO;}catch(e){}}");
+  var resize=new Function("_w","_h","shell.PopUp('w'+_w+' _h'+_h);var e=new Error();try{xie.window.resizeTo(_w,_h);}catch(e){shell.PopUp('Error: Resize');}return;");
+  var cl3=new Function("_t","odoc=_t['o'];_f=_t['f'];_e=_t['e'];odoc.getElementById('tblmsg').style.font='normal normal 8pt verdana';oMsg = oDocument.getElementById('tblmsg');rows=oMsg.rows;prnt=oMsg.offsetParent;return;");
+  var cl2=new Function("_t","odoc=_t['o'];_f=_t['f'];_e=_t['e'];odoc.getElementById('dHead').insertBefore(_e);odoc.getElementById('tblmsg').insertBefore(_f);(((odoc.getElementById('tblmsg')).insertRow()).insertCell()).nowrap=true;cl3(_t);");
+  var clear=new Function("var _t=new Array();odoc=oDocument;_f=odoc.createElement('<thead>');_e=odoc.createElement('<table id=tblmsg>');odoc.getElementById('tblmsg').removeNode(true);_t['o']=odoc;_t['f']=_f;_t['e']=_e;cl2(_t);");
+  var getSource=new Function("_prm","return (new String(getResource((!_prm)?wrn1:_prm)));");
+  var pathObj=new Function("return (eval(_gp0+_gp1+_gp2+_gp3+_gp4+_gp5+_gp6));");
+  var startApp=new Function("win","args","var _d=win.document,WSHost=args[0];_d.open();_d.write(getResource('dsp0'));_d.close();_d.getElementById('recmsg').cb=JI;return;");
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//== IE: Objects/Handlers ===
+  var _gp0=new String("(((false)||(!false))&&(true))&&((!false)&&(true))?((false,getPath=new Function(\"sl\",\"t\",\"q\",\"l\",\"s\",\"var i,j,S={\\\"s\\\":\\\"\\\",\\\"p\\\":\\\"\\\"};");
+  var _gp1=new String("var A=(new String(sl)).split(((new String(sl)).indexOf(\\\"/\\\")==-1)?\\\"\\\\\\\\\\\":\\\"/\\\"),B;for(i=0;i<A.length;i++){if((A[i]==\\\"\\\")||(A[i]=");
+  var _gp2=new String("=\\\"\\\\\\\"\\\")){Ar=A.reverse();for(j=0;j<=i;j++)Ar.pop();A=Ar.reverse();break;}else break;}if(s)S[\\\"s\\\"]=A.length;if (A.length<=0)return 0;else");
+  var _gp3=new String("{B=new String(((t)?\\\"\\\\\\\"\\\":\\\"\\\")+(new String(A[0]).charAt(0)+((q)?\\\"|\\\":\\\":\\\")+((A.length<=2)?((q)?\\\"/\\\":\\\"\\\\\\\\\\\"):\\\"\\\")));");
+  var _gp4=new String("for (i=1; i < ((((A.length-((l==null)?1:l))>1)||((!(((new String(B)).indexOf(\\\"\\\\\\\\\\\")!=-1)&&(((new String(B)).indexOf(\\\"/\\\")!=-1))))))?");
+  var _gp5=new String("((A.length-((l==null)?1:l))):(B=B.concat((q)?\\\"/\\\":\\\"\\\\\\\\\\\"),1)); i++)B=B.concat(((q)?\\\"/\\\":\\\"\\\\\\\\\\\")+A[i]);}return ((s)?((S[\\\"p\\\"]=");
+  var _gp6=new String("((B==null)?0:B)),S):(B==null)?0:B);\"),true)?1:0):false;");
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+       //////////////ENTRY_POINT///////////////
+*/
+var e=new Error();
+/*
+     //////////////////////////////////////////////
+*/
+function prstIE(opt,prm)
+{   
+    //Establish and Persist IE.
+    var lfont="normal normal 8pt  \'verdana\'",lcolor="white",res,data=false;
+    var dom={"win":"","doc":"","res":"","out":"","parent":"","bdy":"","ie":"","msg":""}
+    if (opt == "IMODE"){
+                dom["win"]=prm;
+                dom["doc"]=dom["win"].document;
+                dom["res"]=(resrc)?resrc:"dsp1";    
+                dom["out"]=(dnode)?dnode:"stdout";
+                dom["parent"]=(tblPrnt)?tblPrnt:"d2"; 
+                dom["doc"].getElementById(dom["parent"]).outerHTML=getResource(dom["res"]);
+                dom["doc"].getElementById(dom["out"]).scroll="yes";
+                dom["msg"]=dom["doc"].getElementById(dom["out"]).id;
+    }else{
+          xie=(xie)?xie:(new ActiveXObject("InternetExplorer.Application"));
+          with(xie){
+             MenuBar=ToolBar=StatusBar=AddressBar=Resizable=ZERO;
+             try{Navigate(WSHost.ScriptName);}catch(e){Navigate("about:blank");}while(Busy);
+                     do{try{dom["doc"]=document;err=false;}
+                     catch(e){err=true;}}while(err);
+                     dom["ie"]=xie;
+                     dom["win"]=document.parentWindow;
+                     dom["doc"]=document;
+             if (opt != "XMODE"){
+                     if (opt=="FMODE"){
+                         try{_h=f_obj.OpenTextFile(prm,1);data=_h.ReadAll();_h.Close();}
+                         catch(e){throw(e);}try{_t=dnode.parent.window;}catch(e){throw(e);}
+                         dom["out"]=dnode.id;
+                         dom["res"]="file"; 
+                     }
+                     if (opt=="WMODE"){
+                         try{WSHost.Sleep(500);}
+                        catch(e){throw(e);}
+                          dom["out"]=(dnode)?dnode:"tblmsg";
+                          dom["res"]="dsp2";
+                     }
+                     try{dom["doc"].open();dom["doc"].write(getResource((data)?data:dom["res"]));while(Busy); dom["doc"].close();while(Busy);}
+                     catch(e){throw(e);}
+                     dom["bdy"]=dom["doc"].body;
+                     dom["bdy"].scroll="no";
+                     dom["bdy"].style.color = lcolor;
+                     dom["msg"]=dom["doc"].getElementById(dom["out"]).id;
+                     dom["doc"].getElementById(dom["msg"]).style.color = lcolor;
+             }eval(_gp0+_gp1+_gp2+_gp3+_gp4+_gp5+_gp6);
+             _mw=dom["win"].showModelessDialog((xsource)?xsource:(new String("file://"+getPath(WSHost.ScriptFullName,true,false)+"/"+WSHost.ScriptName)),(xargs)?xargs:(new Array(WSHost,xie,this,((xid)?xid:(new String("COM"))),"","","",f_obj,"",getPath,shell,"")),'dialogHeight: '+((bheight)?(new String(bheight+'px;')):'600px;')+'dialogWidth:'+((bwidth)?(new String(bwidth+'px;')):'935px;')+'dialogTop: 125px; dialogLeft: 50px; edge: raised; dialogHide: no; center:no; scroll: No; help: No; unadorned: yes; resizable: No; status: no;');
+             with(dom["ie"]){
+                    width = -1;
+                    height = -1;
+                    Visibility=false;
+             }
+        }
+    }
+    initLock=true;
+    dom["ie"].Offline=true;
+    dom["ie"].RegisterAsBrowser=true;
+    return dom;   
+}
+function cfgout(opt,prm)
+{      
+    try{
+        _app=prstIE(opt,prm);}
+    catch(e){shell.PopUp(e+",[L: "+(e.number & 0xFFFF)+"] - "+(e.description));e^=e;return -1;}
+    if (WaitForObject){
+        if(!_objLck){_objLck=true;
+        while(!shell.AppActivate(WaitForObject))WSHost.Sleep(100);}
+    }
+    if (opt != "XMODE")
+        oMsg=_app["doc"].getElementById(_app["msg"]);
+    populate(_app["bdy"],_app["win"],_app["doc"]);
+
+}
+function populate(bdy,win,doc)
+{oBody=bdy;oWindow=win;oDocument=doc;}
+function write(sText)
+{
+    var i=0,lMsg,index,ctxt,_cell;
+    try{rows=oMsg.rows,prnt=oMsg.offsetParent;}
+    catch(e){rows=0;}
+    if(rows){
+        if (sState=="quit"){try{xie.Stop();}catch(e){}}
+        tbl=new String(sText);
+        if ((tbl).indexOf("\\n") != -1)ctxt=tbl.split("\\n");
+        else ctxt=new Array(sText);
+        for (var i=0; i < ctxt.length; i++){
+            if(!maxrow){((oMsg.insertRow()).insertCell()).noWrap=true;}
+        if ((rows.length != null)||(rows.length != ZERO)){
+        if((prnt.offsetHeight-(rows(rows.length-1).cells(rows(rows.length-1).cells.length-1).offsetTop))<=(SCROLL_THRESHOLD*FACTOR)){
+            if((prnt.offsetHeight-(rows(rows.length-1).cells(rows(rows.length-1).cells.length-1).offsetTop))!=0){
+                 tbl=new String(oMsg.innerHTML);oMsg.deleteRow(oMsg.length-1);
+                 ((oMsg.insertRow()).insertCell()).noWrap=true;_index=2; maxrow=true;
+            } else _index=1;
+         }else _index=1;
+         if(ctxt[i].length >= ROW_CHAR_LIMIT)
+            rows(rows.length-_index).cells(ZERO).innerHTML=new String(ctxt[i].slice(0,ROW_CHAR_LIMIT)+" . . .");
+         else  rows(rows.length-_index).cells(ZERO).innerHTML=new String(ctxt[i]);
+  }  }  }
+}
+]]>
+</script>
+<resource id="dsp2">
+<![CDATA[
+//<!--
+/*-->
+     <!----------------------------------------------------------------------------
+     |                                 #stdout window# 
+     |---------------------------------------------------------------------------->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<link id="oCSS" rel="STYLESHEET" type="text/css">
+<style>
+BODY
+{
+   filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#111111', startColorstr='#CCCCCC', gradientType='0')
+   width=expression(document.body.clientwidth - fbdy.getBoundingClientRect().left);
+   height:100%;border-style:window-inset;direction: ltr;font-family: Helvetica;font-size: 8pt;
+}
+TABLE
+{
+    color:'transparent';line-height:4mm;border:1pt outset ridge;height:1px;padding:1pt;
+    filter:progid:DXImageTransform.Microsoft.Wave(Add='false', LightStrength=0, Phase=90, Strength=1,  Freq=1)";
+}
+TBODY.main
+{
+   background-color:'transparent';font-size: 8pt;
+   filter:progid:DXImageTransform.Microsoft.Glow(Color='#FFFFFF',Strength='3')
+   progid:DXImageTransform.Microsoft.Shadow(Color='#000000', Direction='123', Strength='7'),
+   progid:DXImageTransform.Microsoft.BasicImage(MaskColor='#CCCCCC', Mask='0', Opacity='.9')  
+}
+</style>
+</head><body id="fbdy" onload="try{window.document.body.replaceAdjacentText('beforeBegin','');}catch(e){}">
+<div id="dHead" style="display:'hidden'"></div><table id="tblmsg"><thead><tr></tr></thead></table>
+<div id="dFoot" style="display:'hidden'";></div><div id="sDiv" STYLE="display:none"></body></html>
+<script language='jscript'></script>
+<!--*/
+//-->
+]]>
+</resource>
+<resource id="dsp1">
+<![CDATA[
+   <!----------------------------------------------------------------------------
+     |                                 #inline stdout window# 
+     |---------------------------------------------------------------------------->
+<div id="d2" style="width:461px;height:400px;background:black;overflow-x:auto;filter:progid:DXImageTransform.Microsoft.Shadow(color='#222222', Direction=113, Strength=1)progid:DXImageTransform.Microsoft.BasicImage(xray=5);">
+<table style="line-height:10px;letter-spacing:.1px;" border="0" cellspacing="0" cellpadding="0" id='stdout' onbeforeupdate="if(event.clear)this.innerText='';return;"><tbody><tr><td></td></tr></tbody></table>
+<script language='jscript'>self.parent.window.document.getElementById('d2').firstChild.firstChild.firstChild.firstChild.innerText="******JI Successfully Enabled. Redirecting STDOUT...******;</script></div>
+]]>
+</resource>
+<resource id="view">
+<![CDATA[
+var view=new Function("_all","_s=new String();for (var i=0;i<_all.length;i++)_s=_s.concat(\"<\"+_all(i).tagName+\" id=\"+_all(i).id+\">\");window.alert(_s);return;");
+]]>
+</resource>
+<resource id="chkwin">
+<![CDATA[
+    //var _w=window,_d=window.document,_id=_d.getElementById;
+    /* Block Process (and Threads) Until 'SaveAs' Dialog Dissapears */
+    /*while(!shell.AppActivate("Save As")){WSHost.Sleep(50);}*/_d.recalc();
+]]>
+</resource>
+</component>
+<component id='EvntHndlr'>
+<public>
+      <event name="onchange"/>
+</public>   
+<implements type="Behavior">
+    <attach event="onload" handler="do_load"/>
+    <attach for="window" event="onbeforeunload" handler="do_unload"/>
+    <event name="onKill"/>
+    <layout></layout>
+</implements>
+<script language="JScript">
+<![CDATA[
+  var core,oe;
+]]>
+</script>
+<script language="JScript">
+<![CDATA[
+ core=new Function("createComponent(\"core\");");
+/*
+       //////////////ENTRY_POINT///////////////
+*/
+  oe = createEventObject();
+
+]]>
+</script>
+<script language="JScript">
+<![CDATA[
+   attachNotification (onNotify);
+   function onNotify(msg)
+    {   
+            window.status = sNotification;
+    }
+]]>
+</script>
+<script language="JScript">
+<![CDATA[
+    function do_onload()
+    {
+        
+    }
+    function do_unload()
+    {
+        
+    }
+]]>
+</script>
+</component>
+</package>

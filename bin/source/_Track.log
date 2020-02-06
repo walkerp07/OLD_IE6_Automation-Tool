@@ -1,0 +1,7 @@
+$trace > Current Selected Target: N200
+$trace >  ISALPHA: IN: ( OUT: ( SPEED: 0 FOWARD: false
+$trace >  ISALPHA: IN: ~ OUT: ~ SPEED: 0 FOWARD: false
+$trace >  ISALPHA: IN: ~ OUT: ~ SPEED: 0 FOWARD: false
+$trace >  ISALPHA: IN: ~ OUT: ~ SPEED: 0 FOWARD: false
+$trace >  ISALPHA: IN: ~ OUT: ~ SPEED: 0 FOWARD: false
+$trace >  KeyPress:  Sending: at+ckpd=":C:C:C:C",1,1

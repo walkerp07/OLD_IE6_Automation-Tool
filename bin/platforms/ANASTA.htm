@@ -1,0 +1,323 @@
+//<!--
+/* -->
+ <!--
+ ` --------------------------------_SkyPlayer.js-----------------------------------`
+  `                              Instruction-Set Definitions V1.0.0                          `
+  `                            Copyright © 2004. - SKY MobileMedia.                     `
+  `                                Author: Phillip Walker [5/25/05]                          `
+ `____________________________________________________________`
+   *************************************************************-->
+
+<html><title>ANASTA - Instruction Set</title><head></head>
+<body id="ANA" style="background:black;" onload="_w=window,_d=_w.document,_id=_d.getElementById;window.resizeTo(700,350);_d.body.replaceAdjacentText('afterBegin','');_t=_d.getElementsByTagName('TITLE');_id('sNd').innerText=_t[0].innerText;"><div style="filter:progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF, Direction=335, Strength=8);background:black;width:100%;height:20%;">
+<div style="height:10%;width:80%;"><span style="filter:progid:DXImageTransform.Microsoft.Shadow(color=#0000FF, Direction=335, Strength=5)height:70%;width:80%;position:absolute;"><nobr>&nbsp;&nbsp;&nbsp;<span id='sNd' style="color:white;font-size:30pt;width:80%;"></span></nobr></span></div></div><!--
+*///--><script language='jscript'>
+function ANASTA()
+{//Loose JScript implementation of Observerable interface (MVC)
+//PLATFORM: [ANESTA] /
+ANASTA.prototype.regObserver=regObserver;ANASTA.prototype.informViewers=informViewers;ANASTA.prototype.MSEQ=MSEQ;ANASTA.prototype.update=update;
+this.ID="ANASTA";this.ObsVect=new Array();this.EID="Target";this.KPDelay=500;this.PltClk=10;this.IP=-1;this.COM=1;ANASTA.prototype.ticks=ticks;ANASTA.prototype.Next=Next;
+this.getId=new Function("return this.ID");
+//                [/WAP\]
+//_________________\_____________________________________________________________
+//==========================================================
+var FROM_NATIVE_DELETE_LAST_PROFILE=END+END+IKEY+PAUSE+DOWN+DOWN+DOWN+DOWN+IKEY+UP+OK+DOWN+DOWN+DOWN+IKEY+OK+PAUSE+OK;
+var GO_FROM_NATIVE_TO_PROFILE=END+END+IKEY+PAUSE+DOWN+DOWN+DOWN+DOWN+IKEY;
+var GO_FROM_NATIVE_TO_BOOKMARK=END+END+IKEY+PAUSE+DOWN+IKEY;
+var GO_FROM_END_OF_WAP_PROFILE_TO_NEW_PROFILE=BACK+UP+UP+BACK+IKEY;
+var CLEANUP_SETTINGS_THEN_ADD_NEW_PROFILE=IKEY+UP+OK+IKEY+DOWN+IKEY+UP+IKEY+DOWN+IKEY+DOWN+SEND+UP+IKEY+DOWN+IKEY+IKEY+UP+SEND+DOWN+IKEY+DOWN+DOWN+SEND+DOWN+DOWN+DOWN+DOWN+IKEY+UP+SEND+BACK+IKEY+")"+ADD_PROFILE;
+var SECOND_CHOICE=UP+DOWN;
+var REFRESH_LEVEL=BACK+IKEY;
+//PLATFORM: [ANESTA] /                   [/WAP\]
+//_________________\_________PROFILE SEQUENCE____________________________________________________
+//IN: LEVEL[0] = (NATIVE)|
+//========================
+//IN: LEVEL[2]
+var ADD_PROFILE=OPTION+DOWN+DOWN+IKEY+IKEY;
+var CLOSE_PROFILE=OK+OK+PAUSE;
+var INTO_HOME=IKEY+PAUSE+IKEY+"#";
+var CLOSE_HOME=OK+OK+PAUSE+OK;
+var INTO_BEARER=DOWN+IKEY;
+var CSD_SETTINGS=DOWN+IKEY;
+var GPRS_SETTINGS=DOWN+IKEY;
+var INTO_APN=IKEY+IKEY;
+var CLOSE_APN=OK+OK+PAUSE+OK;
+var INTO_CONNECT=DOWN+IKEY;
+var INTO_DISPLAY=DOWN+IKEY;
+var INTO_SECURE=DOWN+IKEY;
+var CLOSE_DISPLAY=OK+PAUSE+OK;
+var CLOSE_SECURE=IKEY+PAUSE+OK;
+var CLOSE_CONNECT=IKEY+PAUSE+OK;
+var SELECT_SECURE=DOWN;
+var SELECT_TEMPORARY=DOWN;
+var SELECT_DISPLAY=UP+OK;
+//IN: LEVEL[3]
+var INTO_DIALUP=IKEY+IKEY;
+var CLOSE_DIALUP=OK+OK+PAUSE+OK;
+var INTO_USERID=DOWN+IKEY+IKEY+"#";
+var CLOSE_USERID=OK+OK+PAUSE+OK;
+var INTO_PASSWORD=DOWN+IKEY+IKEY;
+var CLOSE_PASSWORD=OK+OK+PAUSE+OK;
+var SKIP_LINGER=OK+OK+PAUSE+OK;
+var INTO_CTYPE=DOWN+IKEY;
+var CLOSE_CSPEED=OK+PAUSE+OK;
+var CLOSE_CTYPE=OK+PAUSE+OK;
+var SELECT_14400=DOWN;
+var SELECT_ANALOG=UP;
+var INTO_CSPEED=DOWN+IKEY;
+var INTO_LINGER=DOWN+IKEY+IKEY+BACK+BACK;
+var CLOSE_LINGER=OK+OK+PAUSE+OK+BACK;
+//IN: LEVEL[3-1]
+var INTO_PROXYIP=DOWN+IKEY+IKEY+IKEY+BACK+BACK+BACK+BACK+BACK+BACK+BACK;
+var INTO_PROXYPORT=DOWN+IKEY+BACK;
+var CLOSE_PROXYPORT=OK+OK+PAUSE+OK;
+//IN: LEVEL[3-2]
+var PROXYAUTH=DOWN+IKEY+DOWN+IKEY;
+var SELECT_PROXYON=IKEY;
+var WSP_IP=DOWN+IKEY+IKEY+IKEY+BACK+BACK+BACK+BACK+BACK+BACK+BACK;
+var WSP_PORT=OK+DOWN+IKEY+BACK;
+var HTTP=DOWN+IKEY;
+var IS_PROXY=SELECT_PROXYON+DOWN+IKEY+BACK+BACK+BACK+BACK+BACK+BACK+BACK;
+var PROXY_IP=OK+DOWN+IKEY+BACK;
+var PROXY_PORT=OK+OK+PAUSE+OK;
+//
+//_________________\_________MMS_SETTINGS_SEQUENCE____________________________________________________
+//
+var GO_FROM_NATIVE_TO_MMS_SETTINGS=END+END+END+END+END+END+OK+IKEY+UP+IKEY+DOWN+DOWN+IKEY;
+var GO_FROM_PROFILE_TO_NEW_PROFILE=IKEY;
+var INTO_VALIDITY_PERIOD=IKEY;
+var CLOSE_VALIDITY_PERIOD=OK;
+var INTO_DELAYED_DELIVERY=DOWN+IKEY;
+var CLOSE_DELAYED_DELIVERY=OK;
+var INTO_DELIVERY_REPORT=DOWN+IKEY;
+var CLOSE_DELIVERY_REPORT=OK;
+var INTO_READ_REPORT=DOWN+DOWN+IKEY;
+var CLOSE_READ_REPORT=OK;
+var INTO_PRIORITY=DOWN+DOWN+IKEY;
+var CLOSE_PRIORITY=OK;
+var INTO_AUTO_DOWNLOAD=DOWN+IKEY;
+var CLOSE_AUTO_DOWNLOAD=OK;
+var INTO_MESSAGE_CLASS=DOWN+DOWN+IKEY;
+var CLOSE_MESSAGE_CLASS=OK;
+//
+//_________________\_________MMS_SETTINGS_SEQUENCE_END_________________________________________________
+//
+//PLATFORM: [N200/100] /                   [/MMS\]
+//_________________\_________PROFILE SEQUENCE____________________________________________________
+//IN: LEVEL[0] = (NATIVE)|
+//========================
+//
+var SELECT_NONE="";
+var ADD_MMS_PROFILE=SEND+UP+OK+IKEY;
+var INTO_MMS_PROFILE_NAME=IKEY;
+var CLOSE_MMS_PROFILE_NAME="(=5,1"+OK+OK+")";
+var INTO_MMS_CENTER=IKEY;
+var CLOSE_MMS_CENTER=OK;
+var INTO_MMS_DIALUP="(=5,1"+DOWN+IKEY+")"+"(=5,1"+DOWN+IKEY+")"+"(=5,1"+DOWN+DOWN+DOWN+")"+"(=5,1"+DOWN+DOWN+DOWN+DOWN+")"+IKEY;
+var CLOSE_MMS_DIALUP=OK;
+var INTO_MMS_USER_ID="(=5,1"+DOWN+IKEY+")";
+var CLOSE_MMS_USER_ID=OK;
+var INTO_MMS_PASSWORD="(=5,1"+DOWN+DOWN+IKEY+")";
+var CLOSE_MMS_PASSWORD=OK;
+var INTO_MMS_CALL_TYPE="(=5,1"+DOWN+DOWN+IKEY+")";
+var CLOSE_MMS_CALL_TYPE=OK;
+var INTO_MMS_CALL_SPEED="(=5,1"+DOWN+DOWN+IKEY+")";
+var CLOSE_MMS_CALL_SPEED=OK;
+var INTO_MMS_LINGER="(=5,1"+DOWN+DOWN+IKEY+")";
+var CLOSE_MMS_LINGER=OK;
+var INTO_MMS_CONNECTION_TYPE="(=5,1"+DOWN+DOWN+IKEY+")";
+var CLOSE_MMS_CONNECTION_TYPE=OK;
+var INTO_MMS_SECURE_SETTING="(=5,1"+DOWN+DOWN+IKEY+")";
+var CLOSE_MMS_SECURE_SETTING=OK;
+var INTO_USE_TCP="(=5,1"+DOWN+DOWN+DOWN+")";
+var CLOSE_USE_TCP="";
+var INTO_ENABLE_PROXY=DOWN;
+var CLOSE_ENABLE_PROXY="";
+var INTO_MMS_IP=DOWN+IKEY+"(=5,1"+BACK+BACK+BACK+BACK+BACK+BACK+BACK+")";
+var CLOSE_MMS_IP=OK;
+var INTO_MMS_PORT=DOWN+IKEY+BACK;
+var CLOSE_MMS_PORT=OK;
+//
+var INTO_APN_NO_PROXY=DOWN+DOWN+DOWN;
+//
+var INTO_MMS_APN="(=5,1"+UP+UP+UP+UP+")"+IKEY+UP+IKEY+"(=5,1"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+IKEY;
+var CLOSE_MMS_APN=OK;
+var INTO_MMS_ID="(=5,1"+DOWN+IKEY+")";
+var CLOSE_MMS_ID=OK;
+var INTO_MMS_GPRS_PASSWORD=DOWN+DOWN+IKEY;
+var CLOSE_MMS_GPRS_PASSWORD=OK;
+var MMS_SAVE_PROFILE=OK+BACK+OK;
+//
+//PLATFORM: [ANESTA] /                   [/WAP\]
+//_________________\_________BOOKMARK SEQUENCE____________________________________________________
+//IN: LEVEL[0] = (NATIVE)|
+var ADD_BOOKMARK=OPTION+DOWN;
+var INTO_ADDRESS=IKEY+PAUSE+IKEY;
+var CLOSE_ADDRESS=OK+OK;
+var INTO_TITLE=IKEY+"#";
+var CLOSE_TITLE=OK+OK+PAUSE+OK;
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+//PLATFORM: [ANESTA] /    [MMS]
+////_________________\_____________________________________________________________
+//
+var FROM_NATIVE_TO_MMS_ATTACHMENT=END+this.ticks(1)+"(=1,1"+END+END+OK+LEFT+UP+IKEY+IKEY+DOWN+IKEY+")";
+var GO_FROM_MMS_ATTACHMENT_TO_RECEIPANT=OK+IKEY+this.ticks(10)+OK+IKEY;
+var FROM_MESSAGE_TO_MMS_ATTACHMENT=OK;
+var DELETE_MMS_MESSAGE="(=3,1"+BACK+BACK+DOWN+DOWN+DOWN+IKEY+DOWN+")"+IKEY+this.ticks(5)+"(=3,1"+OK+UP+IKEY+")"+PAUSE+OK+this.ticks(6)+OK+this.ticks(2)+"(=3,1"+BACK+UP+UP+UP+IKEY+UP+")";
+var GOTO_AUDIO_MMS_FOLDER=REFRESH_LEVEL+DOWN+DOWN+DOWN+IKEY+DOWN+IKEY;
+var GOTO_IMAGE_MMS_FOLDER=REFRESH_LEVEL+DOWN+DOWN+IKEY+DOWN+DOWN+IKEY;
+//PLATFORM: [ANESTA] /    [MMS]
+var INTO_TEXT=this.ticks(2)+IKEY;                 //<-- (0)
+var CLOSE_TEXT=OK;
+var INTO_VIDEO=this.ticks(2)+"(=1,5"+DOWN+IKEY+")";
+var RECORD_VIDEO=IKEY+this.ticks(7)+IKEY+this.ticks(8)+SEND+this.ticks(7)+OK+this.ticks(10);
+var CLOSE_VIDEO=DOWN;
+var INTO_AUDIO=this.ticks(2)+"(=1,5"+DOWN+DOWN+IKEY+")";
+var RECORD_AUDIO=IKEY+OK+this.ticks(10)+OK+this.ticks(10)+IKEY;
+var CLOSE_AUDIO=DOWN;
+var INTO_IMAGE=this.ticks(2)+"(=1,5"+UP+IKEY+")";
+var RECORD_IMAGE=IKEY+this.ticks(10)+"(=1,5"+IKEY+OK+")"+this.ticks(10)+SEND;
+var CLOSE_IMAGE="(=1,5"+DOWN+DOWN+")";
+var CLOSE_INSERT=SEND;
+var ADD_PAGE="(=1,5"+OK+DOWN+DOWN+IKEY+")";// --> (0)
+var FROM_MMS_ATTACHMENT_TO_SUBJECT=OK+IKEY+this.ticks(2);
+var INTO_SUBJECT=IKEY+this.ticks(2);
+var CLOSE_SUBJECT="(=1,5"+OK+OK+")";
+var ADD_RECIPIENT=IKEY+this.ticks(2)+IKEY;  //<-- (1)
+var CLOSE_RECIPIENT="(=1,5"+OK+SEND+")";     //--> (1)
+var ADD_CC="(=1,5"+DOWN+IKEY+")"+this.ticks(2)+IKEY;    //<-- (2)
+var CLOSE_CC="(=1,5"+OK+SEND+UP+")";     // --> (2)
+var ADD_BCC="(=1,5"+DOWN+DOWN+IKEY+IKEY+")"; //<-- (3)
+var CLOSE_BCC="(=1,5"+OK+SEND+UP+UP+")"; // --> (3)
+var SEND_MMS=OK+SEND+this.ticks(2)+OK+this.ticks(20)+"(=1,5"+UP+")"+this.ticks(2);
+var FILE_INTERNAL=IKEY;
+var FILE_EXTERNAL="(=1,5"+IKEY+DOWN+")";
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+//ADDING WAP-PROFILES
+//********************************************************************************END
+//start GSM_SETTINGS
+//
+this.PROFILE_START=GO_FROM_NATIVE_TO_PROFILE+ADD_PROFILE;
+this.PROFILE_STARTX=GO_FROM_END_OF_WAP_PROFILE_TO_NEW_PROFILE+ADD_PROFILE;
+this.PROFILE_HOME=CLOSE_PROFILE+INTO_HOME;
+this.PROFILE_DIALUP=CLOSE_HOME+INTO_BEARER+IKEY+CSD_SETTINGS+INTO_DIALUP;
+this.PROFILE_USERID=CLOSE_DIALUP+INTO_USERID;
+this.PROFILE_GSM_PSWRD=CLOSE_USERID+INTO_PASSWORD;
+this.PROFILE_CTYPE=CLOSE_PASSWORD+INTO_CTYPE;
+this.PROFILE_CSPEED=CLOSE_CTYPE+INTO_CSPEED;
+this.PROFILE_LINGER=CLOSE_CSPEED+INTO_LINGER;
+//
+//START GPRS_SETTINGS
+this.PROFILE_APN=INTO_BEARER+DOWN+IKEY+GPRS_SETTINGS+INTO_APN;
+this.PROFILE_USERID=CLOSE_APN+INTO_USERID;
+this.PROFILE_GPRS_PSWRD=CLOSE_USERID+INTO_PASSWORD;
+this.PROFILE_SKIP_LINGER=SKIP_LINGER;
+this.PROFILE_DISPLAY=CLOSE_LINGER+INTO_DISPLAY;
+this.PROFILE_CONNECT=CLOSE_DISPLAY+INTO_CONNECT;
+this.PROFILE_SECURE=CLOSE_CONNECT+INTO_SECURE;
+this.PROFILE_WSP_IP=CLOSE_SECURE+WSP_IP;
+this.PROFILE_WSP_PORT=WSP_PORT;
+this.PROFILE_HTTP=OK+OK+PAUSE+OK+HTTP;
+// (IF YES)
+this.PROFILE_IS_PROXY=IS_PROXY;
+this.PROFILE_HTTP1=PROXY_IP;
+this.PROFILE_HTTP2=PROXY_PORT;
+//END IF
+this.EIN=BACK+UP+UP+UP+UP+UP+UP;
+this.FIN=BACK+BACK+BACK+BACK;
+////////////////////////////////////////////////////////////////////////////////////////////
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+//ADDING BOOKMARK
+this.BKM0=GO_FROM_NATIVE_TO_BOOKMARK+ADD_BOOKMARK+INTO_ADDRESS;
+this.BKM1=CLOSE_ADDRESS+INTO_TITLE;
+this.BKM2=CLOSE_TITLE;
+//********************************************************************************END
+//                                  [[[[MMS]]]]
+//PLATFORM: [ANESTA] /    [MMS]
+////ADDING MMS_MESSAGE\__________________________________________________________
+this.MMS_START=FROM_NATIVE_TO_MMS_ATTACHMENT;
+this.MMS_START_NO_NATIVE=FROM_MESSAGE_TO_MMS_ATTACHMENT;
+this.MMS_DELETE_MESSAGE=DELETE_MMS_MESSAGE;
+this.MMS_TEXT=INTO_TEXT;
+this.MMS_AUDIO=CLOSE_INSERT+INTO_AUDIO;
+this.MMS_AUDIO_RECORD=RECORD_AUDIO;
+this.MMS_AUDIO_FILE_INTERNAL=CLOSE_AUDIO+FILE_INTERNAL;
+this.MMS_AUDIO_FILE_EXTERNAL=CLOSE_AUDIO+FILE_EXTERNAL;
+this.MMS_VIDEO=CLOSE_TEXT+INTO_VIDEO;
+this.MMS_VIDEO_RECORD=RECORD_VIDEO;
+this.MMS_VIDEO_FILE_INTERNAL=CLOSE_VIDEO+FILE_INTERNAL;
+this.MMS_VIDEO_FILE_EXTERNAL=CLOSE_VIDEO+FILE_EXTERNAL;
+this.MMS_VIDEO_TO_TEXT=UP;
+this.MMS_IMAGE_TO_TEXT="(=1,5"+UP+UP+")";
+this.MMS_AUDIO_TO_TEXT="(=1,5"+UP+UP+UP+")";
+this.MMS_IMAGE=CLOSE_INSERT+INTO_IMAGE;
+this.MMS_IMAGE_RECORD=RECORD_IMAGE;
+this.MMS_IMAGE_FILE_INTERNAL=CLOSE_IMAGE+FILE_INTERNAL;
+this.MMS_IMAGE_FILE_EXTERNAL=CLOSE_IMAGE+FILE_EXTERNAL;
+this.MMS_ADD_PAGE_OR_SUBJECT=CLOSE_INSERT;
+this.MMS_ADD_PAGE=ADD_PAGE;
+this.MMS_SUBJECT=FROM_MMS_ATTACHMENT_TO_SUBJECT+INTO_SUBJECT;
+this.MMS_RECIPIENT=CLOSE_SUBJECT+ADD_RECIPIENT;
+this.MMS_ADDITIONAL_RECIPIENT=CLOSE_RECIPIENT+ADD_RECIPIENT;
+this.MMS_CC=CLOSE_RECIPIENT+ADD_CC;
+this.MMS_ADDITIONAL_CC=CLOSE_CC+ADD_CC;
+this.MMS_BCC=CLOSE_CC+ADD_BCC;
+this.MMS_ADDITIONAL_BCC=CLOSE_BCC+ADD_BCC;
+this.MMS_SEND=SEND_MMS;
+this.MMS_FROM_DELETE=IKEY;
+//----------------------------------------------------------------------------------------------------------------------------
+//_________________\_________MMS_SETTINGS_________________________________________________
+this.MMS_PROFILE_START=GO_FROM_NATIVE_TO_MMS_SETTINGS;
+this.MMS_PROFILE_START_NO_NATIVE=GO_FROM_PROFILE_TO_NEW_PROFILE;
+this.MMS_VALIDITY=INTO_VALIDITY_PERIOD;
+this.MMS_DELAYED=CLOSE_VALIDITY_PERIOD+INTO_DELAYED_DELIVERY;
+this.MMS_DELIVERY=CLOSE_DELAYED_DELIVERY+INTO_DELIVERY_REPORT;
+this.MMS_REPORT=CLOSE_DELIVERY_REPORT+INTO_READ_REPORT;
+this.MMS_PRIORITY=CLOSE_READ_REPORT+INTO_PRIORITY;
+this.MMS_AUTO=CLOSE_PRIORITY+INTO_AUTO_DOWNLOAD;
+this.MMS_CLASS=CLOSE_AUTO_DOWNLOAD+INTO_MESSAGE_CLASS;
+//----------------------------------------------------------------------------------------------------------------------------------
+//_________________\_______PROFILE SEQUENCE____________________________________________________
+this.MMS_NAME=CLOSE_MESSAGE_CLASS+ADD_MMS_PROFILE+INTO_MMS_PROFILE_NAME;
+this.MMS_CENTER=CLOSE_MMS_PROFILE_NAME+INTO_MMS_CENTER;
+this.MMS_DIALUP=CLOSE_MMS_CENTER+INTO_MMS_DIALUP;
+this.MMS_USER_ID=CLOSE_MMS_DIALUP+INTO_MMS_USER_ID;
+this.MMS_PASSWORD=CLOSE_MMS_USER_ID+INTO_MMS_PASSWORD;
+this.MMS_CALL_TYPE=CLOSE_MMS_PASSWORD+INTO_MMS_CALL_TYPE;
+this.MMS_CALL_SPEED=CLOSE_MMS_CALL_TYPE+INTO_MMS_CALL_SPEED;
+this.MMS_LINGER=CLOSE_MMS_CALL_SPEED+INTO_MMS_LINGER;
+this.MMS_TCP=CLOSE_MMS_SECURE_SETTING+INTO_USE_TCP;
+this.MMS_PROXY_PORT=CLOSE_USE_TCP+INTO_ENABLE_PROXY;
+this.MMS_NO_PROXY=INTO_APN_NO_PROXY;
+this.MMS_IP=CLOSE_ENABLE_PROXY+INTO_MMS_IP;
+this.MMS_PORT=CLOSE_MMS_IP+INTO_MMS_PORT;
+this.MMS_PORT_EXIT=CLOSE_MMS_PORT;
+this.MMS_APN=INTO_MMS_APN;
+this.MMS_ID=CLOSE_MMS_APN+INTO_MMS_ID;
+this.MMS_GPRS_PASSWORD=CLOSE_MMS_ID;
+this.MMS_TYPE=CLOSE_MMS_GPRS_PASSWORD+INTO_MMS_CONNECTION_TYPE;
+this.MMS_SETTING=CLOSE_MMS_CONNECTION_TYPE+INTO_MMS_SECURE_SETTING;
+this.MMS_END_PROFILE=MMS_SAVE_PROFILE;
+//
+this.ALTERNATIVE_CHOICE=SECOND_CHOICE;
+this.SELECT_DISPLAY=SELECT_DISPLAY;
+this.SELECT_TEMPORARY=SELECT_TEMPORARY;
+this.SELECT_SECURE=SELECT_SECURE;
+this.SELECT_ANALOG=SELECT_ANALOG;
+this.SELECT_14400=SELECT_14400;
+//_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-OTHER
+this.IMAGE_RETURN=this.ticks(3)+SEND+DOWN+DOWN;
+this.AUDIO_RETURN=this.ticks(3)+SEND+DOWN;
+this.VIEDO_RETURN=this.ticks(3)+SEND+DOWN;
+this.MP4=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.VIEDO_RETURN;
+this.MID=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+SEND+")"+this.AUDIO_RETURN;
+this.AMR=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.AUDIO_RETURN;
+this.WAV=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.AUDIO_RETURN;
+this.PNG=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.AUDIO_RETURN;
+this.BMP=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.IMAGE_RETURN;
+this.JPEG=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.IMAGE_RETURN;
+this.GIF=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.IMAGE_RETURN;
+this.AGIF=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.IMAGE_RETURN;
+this.WBMP=IKEY+this.ticks(3)+"(=1,5"+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+DOWN+")"+SEND+this.IMAGE_RETURN;
+}//<!--
+//--></script></body></html>

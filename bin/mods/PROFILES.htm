@@ -1,0 +1,62 @@
+//<!--
+/* -->
+ <!--
+ ` --------------------------------_SkyPlayer.js-----------------------------------`
+  `                              Instruction-Set Definitions V1.0.0                          `
+  `                            Copyright © 2004. - SKY MobileMedia.                     `
+  `                                Author: Phillip Walker [5/25/05]                          `
+ `____________________________________________________________`
+   *************************************************************-->
+
+<html><title>PROFILES - Core Module</title><head></head>
+<body id="_pro" style="background:black;" onload="_w=window,_d=_w.document,_id=_d.getElementById;window.resizeTo(700,350);_d.body.replaceAdjacentText('afterBegin','');_t=_d.getElementsByTagName('TITLE');_id('sNd').innerText=_t[0].innerText;"></div><div style="filter:progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF, Direction=335, Strength=8);background:black;width:100%;height:20%;">
+<div style="height:10%;width:80%;"><span style="filter:progid:DXImageTransform.Microsoft.Shadow(color=#FF0000, Direction=335, Strength=5)height:70%;width:80%;position:absolute;"><nobr>&nbsp;&nbsp;&nbsp;<span id='sNd' style="color:white;font-size:30pt;width:80%;"></span></nobr></div></div><!--
+*///--><script language='jscript'>
+try{
+window.document.all.PROFILES.onbeforeupdate=function(){
+    var hndls,_ret,trgtHndls,str,str1,CnP,rType=new Array(),kout;
+    var _w=window,_d=_w.document,_id=_d.getElementById,_path;
+    try{arg=(new String(_res.cnst[_da[11].type])).toLowerCase();}
+    catch(e){arg="wap";}
+    //catch(e){window.alert("'Job' Is Invalid."," _profiles: ");WSHost.Sleep(1500);_pMgr.NtfyKill(_da[6]);}
+    if(((event.srcElement.id)==_res.cnst["_pro"])&&((window.dialogArguments[3])==_res.cnst["_launch"]))
+    {
+        _pMgr.Mhndl=_da[4].Mhndl;_pMgr.Whndl=_da[4].Whndl;
+        _pMgr.MCI=_da[4].MCI;_pMgr.WCI=_da[4].WCI;
+        _pMgr.path=getPath(window.location.pathname,false,false,1);
+            //=====================_INITIALIZATION_========================
+        
+        hndls=SkyMobile.initHndlrs();
+        _ret=getTargetStruc(SkyMobile,_pMgr._target,hndls);
+        trgtHndls=_ret["trgtHndls"];ChHndlr=_ret["ChHndlr"];SkyHndlr=_ret["SkyHndlr"];platform=_ret["platform"];
+        Splash();
+        try{InHndl=FileHandler(f_obj, 2, (new String(_pMgr.path+_res._paths['_src']+_res.bms)),1);}
+        catch(e){Trace_Print(e.message+". Terminating Session...");_pMgr.NtfyKill(_da[6]);}
+        
+        Startup(SkyMobile,(_pMgr.path+_res._paths['_eng']+_res._files['_eng']),getPath,shell);WSHost.Sleep(500);
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        str=InHndl.ReadAll();
+        str1=new String(str);
+        CnP=str.split("~~~~~~~~~~~~~~~~~~~~");
+        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        rType["flag"]=flag;rType["platform"]=platform;rType["ret.ii"]=1;rType["ret.CnP"]=CnP;
+        rType["ret.jj"]=1;rType["ret.nflag"]=true;rType["ret.UsrPfs"]=1;rType["ret.country"]="";
+        if(!rType){window.alert("An Unrecoverable Error Has Occured. Thread Is Now Exiting..."," WAP_PROFILES: ");_pMgr.NtfyKill(_da[6]);rType["quit"]=true;}
+        while(!SkyMobile.halt){
+            if(!rType["quit"]){Trace_Print("\\n\\nWAP Profiles Have Been Processed.\\n\\nThread Is Now Exiting With No Errors.");break;}
+            rType=getUserProfile(rType,PATH,arg);
+            kout=rType["kout"];cmd=rType["cmd"];_trace=rType["_trace"];
+            Keypress(kout);
+            if (ieState == ("quit")){Trace_Print("Kill Signal Detected. Terminating...");WSHost.Sleep(700);_pMgr.NtfyKill(_da[6]);_break;}
+            if(arg==_res.cnst["_wpro"])_pMgr.setCounter("_w","-");
+            if(arg==_res.cnst["_mpro"])_pMgr.setCounter("_m","-");
+            _pMgr.setCounter("_l","+");
+        }
+        _pMgr.NtfyKill(_da[6]);
+        _pMgr.GlobalLock=false;
+        _da[4].GlobalLock=false;
+            return false;
+    }
+    return;
+}}catch(e){}//<!--
+//--></script></body></html>

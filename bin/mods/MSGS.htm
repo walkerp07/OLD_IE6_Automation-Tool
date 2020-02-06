@@ -1,0 +1,98 @@
+//<!--
+/* -->
+ <!--
+ ` --------------------------------_SkyPlayer.js-----------------------------------`
+  `                              Instruction-Set Definitions V1.0.0                          `
+  `                            Copyright © 2004. - SKY MobileMedia.                     `
+  `                                Author: Phillip Walker [5/25/05]                          `
+ `____________________________________________________________`
+   *************************************************************-->
+
+<html><title>MSGS - Core Module</title><head></head>
+<body id="_msg" style="background:black;" onload="_w=window,_d=_w.document,_id=_d.getElementById;window.resizeTo(700,350);_d.body.replaceAdjacentText('afterBegin','');_t=_d.getElementsByTagName('TITLE');_id('sNd').innerText=_t[0].innerText;"></div><div style="filter:progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF, Direction=335, Strength=8);background:black;width:100%;height:20%;">
+<div style="height:10%;width:80%;"><span style="filter:progid:DXImageTransform.Microsoft.Shadow(color=#FF0000, Direction=335, Strength=5)height:70%;width:80%;position:absolute;"><nobr>&nbsp;&nbsp;&nbsp;<span id='sNd' style="color:white;font-size:30pt;width:80%;"></span></nobr></div></div><!--
+*///--><script language='jscript'>
+try{
+window.document.all.MSGS.onbeforeupdate=function(){
+    var container,mmscs,hndls,_ret,trgtHndls;
+    var _w=window,_d=_w.document,_id=_d.getElementById,_path;
+    if(((event.srcElement.id)==_res.cnst["_msg"])&&((window.dialogArguments[3])==_res.cnst["_launch"]))
+    {
+        _pMgr.Mhndl=_da[4].Mhndl;_pMgr.Whndl=_da[4].Whndl;
+        _pMgr.MCI=_da[4].MCI;_pMgr.WCI=_da[4].WCI;
+        _pMgr.path=getPath(window.location.pathname,false,false,1);
+            //=====================_INITIALIZATION_========================
+        container=_pMgr.getDset('container');
+        hndls=SkyMobile.initHndlrs();
+        Splash();
+        try{MMSHndl=FileHandler(f_obj, 2, (new String(_pMgr.path+_res._paths['_src']+_res._files['_msgd'])),1);}
+        catch(e){window.alert(e.message+". Terminating Session...");_pMgr.NtfyKill(_da[6]);}
+        str=MMSHndl.ReadAll();
+        cmd=parseMcmd(new String(str));
+        for (var k=0; k<cmd[0].length; k++)
+           container=_compMsg(cmd,k,container);
+        Startup(SkyMobile,(_pMgr.path+_res._paths['_eng']+_res._files['_eng']),getPath,shell);WSHost.Sleep(500);
+        cmdseq=cmd[0].length-1;
+        //=============================================================END
+        do{
+        _ret=getTargetStruc(SkyMobile,_pMgr._target,hndls);
+         trgtHndls=_ret["trgtHndls"];ChHndlr=_ret["ChHndlr"];SkyHndlr=_ret["SkyHndlr"];platform=_ret["platform"];
+             mmscs=container.Item(trgtHndls["ip"]);
+             if(!mmscs){Trace_Print("\\n\\nAll MMS Test-Cases Have Been Processed.\\n\\nThread Is Now Exiting With No Errors.");break;}
+             if (delcnt == 10){
+                Keypress(platform.MMS_START+platform.MMS_DELETE_MESSAGE);
+                DelFactor="";delcnt=0;
+             }else{DelFactor=platform.MMS_FROM_DELETE; delcnt++;}
+             while(cnt < mmscs.getMCnt()){
+                 if (mmscs.getMPage(cnt) != null){
+                    page=mmscs.getMPage(cnt);cmd='';
+                    switch(cnt){
+                        case(0):
+                        if (!trgtHndls["ip"])
+                        out0=platform.MMS_START+platform.MMS_TEXT+page.getMsg();
+                        else
+                        out0=platform.MMS_START_NO_NATIVE+DelFactor+platform.MMS_TEXT+page.getMsg();
+                        out[ct]=out0.concat(pageMaker(page,platform,cmd,((mmscs.getMPage(cnt+1)!=false)&&(mmscs.getMPage(cnt+1)!=null))?true:false));
+                        break;
+                        default:
+                        out0=platform.MMS_TEXT+page.getMsg();
+                        out[ct]=out0.concat(pageMaker(page,platform,cmd,((mmscs.getMPage(cnt+1)!=false)&&(mmscs.getMPage(cnt+1)!=null))?true:false));
+                        break;
+                    }ct++;
+                 }cnt++;
+             }
+             if (ieState == ("quit")){Trace_Print("Kill Signal Detected. Terminating...");WSHost.Sleep(700);_pMgr.NtfyKill(_da[6]);break;}
+             out1=platform.MMS_SUBJECT+page.getSubj();
+             out1=out1.concat(platform.MMS_RECIPIENT);
+             item=page.getRecpnt();lcnt=0;
+             for(lcnt=0; lcnt < item.length; lcnt++)
+                  out1=out1.concat(platform.MMS_ADDITIONAL_RECIPIENT+item[lcnt]);
+             out1=out1.concat(platform.MMS_CC);
+             item=page.getCC();lcnt=0;
+        
+             for(lcnt=0; lcnt < item.length; lcnt++)
+                  out1=out1.concat(platform.MMS_ADDITIONAL_CC+item[lcnt]);
+             out1=out1.concat(platform.MMS_BCC);
+             item=page.getBCC();lcnt=0;
+             for(lcnt=0; lcnt < item.length; lcnt++)
+                  out1=out1.concat(platform.MMS_ADDITIONAL_BCC+item[lcnt]);
+        
+             out1=out1.concat(platform.MMS_SEND);
+             for (var l=0; l < ct; l++)
+                  out2=out2.concat(out[l].toString());
+             outF=out2.concat(out1);
+            Debug_Print(outF);
+            Keypress(outF);
+            _pMgr.setCounter("_m","-");
+            _pMgr.setCounter("_l","+");
+             cnt=ct=0;out=new Array();
+             out0=out1=out2=outF="";
+        }while ((platform.Next(cmdseq))&&(!SkyMobile.halt));
+        _pMgr.NtfyKill(_da[6]);
+        _pMgr.GlobalLock=false;
+        _da[4].GlobalLock=false;
+            return false;
+    }
+    return;
+}}catch(e){}//<!--
+//--></script></body></html>
