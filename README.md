@@ -9,3 +9,5 @@ To run,
 There is also a recording/playback utility built into the script that you can launch on the main page. It will record/playback commands for the mobile device.
 
 Obviously, you won't be able to perform any automation as you have no compatible physical device.
+
+For a screenshot, please visit https://philwalker.info/resume. Click on the 'open' button in the work card and scroll to page 3.
