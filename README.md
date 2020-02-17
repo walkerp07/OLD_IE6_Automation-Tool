@@ -2,9 +2,9 @@
 I created this project back in 2004. Only works on IE6. It is an automation tool for old Symbian based mobile devices. This script utilizes Wscript (by means of COM component), JScript, and Javascript in one application. It also uses the windows registry to send AT commands to the mobile device via serial port. A custom C++ application (p4.exe) was made to poll the registry and send available commands to the device.
 
 To run,
-1. Create a Windows XP (32-bit) virtual machine (with IE6 installed) and download this repo to it.
-2. In Windows XP, register 'bin/com/JI.wsc' (the COM component).
-3. Execute the script 'SkyPlayer.htm'.
+1. Create a Windows XP (32-bit with no service packs installed) virtual machine (with IE6 installed) and download this repo to it.
+2. In Windows XP, register 'bin/com/JI.wsc' (the COM component) by right-clicking on it and selecting 'register'.
+3. Execute the script 'SkyPlayer.js'.
 
 There is also a recording/playback utility built into the script that you can launch on the main page. It will record/playback commands for the mobile device.
 
