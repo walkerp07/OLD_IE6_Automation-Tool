@@ -44,7 +44,7 @@ try{event=new generic();}catch(e){}try{self=new generic();}catch(e){}
 var e=new Error();
 var WSHost=ie=JI=_pMgr=_res=f_obj=shell=getPath=SkyMobile=false,xargs=undefined;
 var FHANDLE=THANDLE=false;
-var ORIGINAL_AUTHOR       = "Keith Burke       [3/21/05]     *";
+var ORIGINAL_AUTHOR       = "Phillip Walker    [3/21/05]     *";
 var REVISING_AUTHOR       = "Phillip Walker    [9/13/05]     *";
 var CURRENT_VERSION       = "Verision 4.1";
 var DEBUG_PROMPT= "TERMINAL > ",TRACE_PROMPT= "$trace > ",ERROR_PROMPT= "ERROR  > ";
